@@ -3,11 +3,33 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Angular_Food_Full_Stack": {
+    "frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
         }
       },
       "root": "",
@@ -17,7 +39,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-food-full-stack",
+            "outputPath": "dist/frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +87,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Angular_Food_Full_Stack:build:production"
+              "browserTarget": "frontend:build:production"
             },
             "development": {
-              "browserTarget": "Angular_Food_Full_Stack:build:development"
+              "browserTarget": "frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +98,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Angular_Food_Full_Stack:build"
+            "browserTarget": "frontend:build"
           }
         },
         "test": {
@@ -100,5 +122,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "356a2c33-c40a-4846-adf5-278236f68d75"
   }
 }
